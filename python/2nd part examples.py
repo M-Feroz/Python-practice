@@ -1,4 +1,24 @@
+def odd_even_list(odd, even):
+    for odd in list1:
+        if odd % 2 != 0:
+            odd_nums.append(odd)
+    result.append(odd_nums)
+    for even in list2:
+        if even % 2 == 0:
+            even_nums.append(even)
+    result.append(even_nums)
+    print(result)
+    
 
+list1 = list(map(int,input("enter the first list: ").split()))
+list2 = list(map(int,input("enter the second list: ").split()))
+odd_nums = []
+even_nums = []
+result = []
+
+odd_even_list(list1, list2)
+        
+                    
 
 #999 exaple palindrome check
 """
