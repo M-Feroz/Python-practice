@@ -1,10 +1,26 @@
-#3rd exercise Base changes
 
+
+#5 Exercise Question 5: Accept list of 5 float numbers as a input from user
+'''
+listt = []
+for i in range(5):
+    user_list = float(input("enter your numbers: "))
+    listt.append(user_list)
+print(listt)
+'''
+
+#4 printing two digits of float number
+"""
+number = float(input("enter a number: "))
+print("%.2f with two decimal digit is your number. " %number) """
+
+#3rd exercise Base changes
+"""
 base_10 = int(input("Enter a number to change to the base of 8: "))
 
 print("the result is : ",oct(base_10))
 print("the result is : ",hex(base_10))
-print("the result is : ",bin(base_10))
+print("the result is : ",bin(base_10))"""
         
 
         
