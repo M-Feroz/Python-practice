@@ -11,7 +11,7 @@ class BotHandler:
 
     #url = "https://api.telegram.org/bot<token>/"
 
-    def get_updates(self, offset=0, timeout=30):
+    def get_updates(self, offset=0, timeout=100):
         method = 'getUpdates'
         params = {'timeout': timeout, 'offset': offset}
         resp = requests.get(self.api_url + method, params)
@@ -42,7 +42,7 @@ Mferoz_bot = BotHandler(token) #Your bot's name
 
 def main():
     new_offset = 0
-    print('hi, now launching...')
+    print('hi, now it is launching and M Feroz Nawrozy both is working...')
 
     while True:
         all_updates=Mferoz_bot.get_updates(new_offset)
@@ -65,11 +65,17 @@ def main():
                 else:
                     first_chat_name = "unknown"
 
-                if first_chat_text == 'Hi':
-                    Mferoz_bot.send_message(first_chat_id, 'Morning ' + first_chat_name)
+                if first_chat_text == 'hi':
+                    Mferoz_bot.send_message(first_chat_id, 'Hi dear, How are you doing? ' + first_chat_name)
+                    new_offset = first_update_id + 1
+                elif first_chat_text == 'salam':
+                    Mferoz_bot.send_message(first_chat_id, 'salam, Roz tan bakhair Khobin? ' + first_chat_name)
+                    new_offset = first_update_id + 1
+                elif first_chat_text == 'سلام':
+                    Mferoz_bot.send_message(first_chat_id, 'سلام روز تان بخير خوبين؟ ' + first_chat_name)
                     new_offset = first_update_id + 1
                 else:
-                    Mferoz_bot.send_message(first_chat_id, 'How are you doing '+first_chat_name)
+                    Mferoz_bot.send_message(first_chat_id, 'Sorry dear '+ first_chat_name + ', Mr.Nawrozy will call later')
                     new_offset = first_update_id + 1
 
 
