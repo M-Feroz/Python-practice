@@ -1,27 +1,27 @@
 from tkinter import *
 from pygame import mixer
 
-root= Tk()
+player_window= Tk()   #intializing the window 
 
 mixer.init() #intializing the mixer otherwise it doesnt work
 
-root.geometry('400x400')
-root.title("Fer_player")
-root.iconbitmap(r'icon1.ico')
+player_window.geometry('400x400')
+player_window.title("Fer_player")
+player_window.iconbitmap(r'icon1.ico')   #creat an icon for the window
 
 #button_1 = 
-text =Label(root,text = "Feroz Music player")
+text =Label(player_window,text = "Feroz Music Player, Click the bellow button to listen happier music")
 text.pack()
-play_photo = PhotoImage(file = 'btn.png')
-#labelphoto = Label(root, image = photo)
+play_photo = PhotoImage(file = 'btn.jpg')   #imported a photo, any formath accepted
+#labelphoto = Label(player_window, image = photo)
 #labelphoto.pack()
 def play_music():
 	mixer.music.load("happier.mp3")
 	mixer.music.play()
-	#print("hi it is play button")
+	print("hi, Welcome to Feroz Music player")
 
-playBtn = Button(root, image = play_photo,command = play_music)
+playBtn = Button(player_window, image = play_photo,command = play_music)
 playBtn.pack()
 
-root.mainloop()
+player_window.mainloop()
 
